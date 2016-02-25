@@ -476,6 +476,22 @@ git checkout dev2
 
 现在在dev2 上我增加了这句话，用fast forward模式merge
 
+$ git merge -m "use default fast forward mode" dev2
+Updating db0fcea..2ab295a
+Fast-forward (no commit created; -m option ignored)
+ learngit.txt | 51 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
+
+ $ git log --graph --pretty=oneline --abbrev-commit
+* 2ab295a 1. use fast forward mode merge
+* db0fcea merge master and dev, handle fix conflicts, remove ...
+*   63ca43b merge master and dev, handle fix conflicts
+
+果然，这种合并方式没有留下任何痕迹
+
+现在再切换到dev2 
+禁用fast forward模式merge
+
 
 
 
