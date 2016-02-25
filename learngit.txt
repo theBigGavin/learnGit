@@ -112,6 +112,25 @@ $ git reset --hard f746122
 HEAD is now at f746122 add how to see git log and how to go back to old version
 好了，找回了刚才敲得一堆文字了吧
 
+如果已经回退了，且关闭了命令行，还想回到当前版本怎么办？ 用git reflog命令
+$ git reflog
+764b194 HEAD@{0}: commit: add test of go back and go current
+f746122 HEAD@{1}: reset: moving to f746122
+57fa415 HEAD@{2}: reset: moving to HEAD^^
+710675b HEAD@{3}: reset: moving to HEAD^
+f746122 HEAD@{4}: commit: add how to see git log and how to go back to old version
+710675b HEAD@{5}: commit: add how to upload changes
+29d38aa HEAD@{6}: commit: change to UTF-8
+57fa415 HEAD@{7}: commit: add and commit operation
+da0313a HEAD@{8}: commit (initial): wrote a learngit note
+这里记录了所有commit操作，只要输入commit命令行开头的数字串，就可返回对应的版本点
+例如:
+git reset --hard 764b194 
+
+
+
+
+
 
 
 
