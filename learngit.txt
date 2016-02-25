@@ -334,6 +334,41 @@ no changes added to commit (use "git add" and/or "git commit -a")
 简单，利用前面的版本回退功能啦： git reset --hard HEAD
 
 
+** 删除文件
+1. 本地删除并不会影响版本库中的文件
+2. git rm filename 才真正从版本库中删除了文件，别忘了删除后还得 git commit
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git add learngit.txt deletme.txt
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git commit -m "about delet file from Repository"
+[master 59deb57] about delet file from Repository
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 deletme.txt
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git rm deletme.txt
+rm 'deletme.txt'
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    deletme.txt
+
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git commit -m "real delete file from Repository"
+[master 9e50a35] real delete file from Repository
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 deletme.txt
+
+
+
+
 
 
 
