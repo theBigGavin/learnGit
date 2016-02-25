@@ -15,11 +15,83 @@ Git is free software.
 
 git diff learngit.txt
 用来查看文件的版本间差异，默认是查看当前文件和库文件之间的区别
+diff --git a/learngit.txt b/learngit.txt
+index 5f04ebf..bc1b225 100644
+--- a/learngit.txt
++++ b/learngit.txt
+@@ -12,3 +12,15 @@ git commit -m "wrote a learngit note"
+
+ Git is a distributed version control system.
+ Git is free software.
++
++git diff learngit.txt
++用来查看文件的版本间差异，默认是查看当前文件和库文件之间的区别
++
++git status
++用来查看库的状态，如果有变化则有显示，无变化则无回显
++
++
++
++
++
++
+
 
 git status
 用来查看库的状态，如果有变化则有显示，无变化则无回显
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
+        modified:   learngit.txt
 
+no changes added to commit (use "git add" and/or "git commit -a")
+
+提交修改文件跟增加新文件的操作一样
+1. git add learngit.txt
+2. git commit -m "add how to upload changes"
+
+[master 710675b] add how to upload changes
+ 1 file changed, 12 insertions(+)
+
+可以通过 git log 查看提交记录
+commit 710675b4c5f1fd219124a014b671cf1f14d191af
+Author: bigGavin <guowei_man@126.com>
+Date:   Thu Feb 25 20:39:59 2016 +0800
+
+    add how to upload changes
+
+commit 29d38aacfdd609841a323cb297212b46eda153dc
+Author: bigGavin <guowei_man@126.com>
+Date:   Thu Feb 25 20:34:00 2016 +0800
+
+    change to UTF-8
+
+commit 57fa415fc0be00b9f2ce65fe6c53ddd7644e4eb1
+Author: bigGavin <guowei_man@126.com>
+Date:   Thu Feb 25 20:32:50 2016 +0800
+
+    add and commit operation
+
+commit da0313a560b94c788109ace064c19044d6baf6c2
+Author: bigGavin <guowei_man@126.com>
+Date:   Thu Feb 25 20:23:47 2016 +0800
+
+    wrote a learngit note
+
+git log --pretty=oneline
+可以将每次版本变更显示为一行概要信息
+710675b4c5f1fd219124a014b671cf1f14d191af add how to upload changes
+29d38aacfdd609841a323cb297212b46eda153dc change to UTF-8
+57fa415fc0be00b9f2ce65fe6c53ddd7644e4eb1 add and commit operation
+da0313a560b94c788109ace064c19044d6baf6c2 wrote a learngit note
+
+如上，注意log的显示是倒叙的，最后的更改在最上面
+710675b4c5f1fd219124a014b671cf1f14d191af是commit id（版本号）
+
+版本回退使用 git reset 命令
+git reset --hard HEAD^
 
 
 
