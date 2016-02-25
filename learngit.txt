@@ -1,8 +1,13 @@
 ﻿v0.1.2
 
-git add learngit.txt
+** 创建版本库
+在工作目录下执行: git init
 
-git commit -m "wrote a learngit note"
+** 添加文件到版本库
+两步：
+1. git add learngit.txt
+
+2. git commit -m "wrote a learngit note"
 -m 后面输入本次提交的说明，任意文字，但当然是希望是对描述修改的有意义的文字
 
 [master (root-commit) da0313a] wrote a learngit note
@@ -10,9 +15,11 @@ git commit -m "wrote a learngit note"
  create mode 100644 learngit.txt
 执行后git 告诉我们 1个文件被变更，插入了1行内容。
 
-Git is a distributed version control system.
-Git is free software.
+** 将变更提交到版本库
+提交变更和增加文件的操作一样，都是git add然后跟git commit
 
+** 检查变更
+可以用git diff命令查看 当前工作区文件和版本库文件的差异
 git diff learngit.txt
 用来查看文件的版本间差异，默认是查看当前文件和库文件之间的区别
 diff --git a/learngit.txt b/learngit.txt
@@ -264,6 +271,56 @@ index 393e14b..86fa509 100644
 -----------------------------------------------------------------
 
 可见工作区和版本库中相比 ^9012 没有被加入，再次执行git add 和 git commit 才能将后面的变更更新到版本库中
+
+** 撤销修改
+撤销在不同的几个状态时，操作是不同的。
+1. 没有执行git add 前，撤销修改
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   learngit.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+如上，git status 告诉我们 可以用git checkout -- learngit.txt将版本库中的文件重新取回来，达到忽略工作区修改的目的
+
+2. 执行了git add之后，但还没有执行git commit时，撤销修改
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git add learngit.txt
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   learngit.txt
+
+如上，git status 告诉我们 用 git reset HEAD learngit.txt 可以将暂存区(stage)中的变更撤销
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git reset HEAD learngit.txt
+Unstaged changes after reset:
+M       learngit.txt
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   learngit.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+这里执行 git reset HEAD learngit.txt 后，其实只是将暂存区清空了，工作区的修改并没撤销，你自己修改回来就行了。
+
+3. 执行了git add 后，还执行了git commit,还想撤销修改？
+简单，利用前面的版本回退功能啦： git reset --hard HEAD
 
 
 
