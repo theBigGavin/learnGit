@@ -132,6 +132,63 @@ git reset --hard 764b194
 git add就是将文件提交到 暂存区
 git commit 就是讲文件提交到 当前分支master（由创建Git版本库时自动创建）
 
+我们再当前工作区 增加了一个新的文件 license.txt
+查看一下当前状态：
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   learngit.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        license.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+由于license.txt 还没有加入Git版本库，所以显示为 Untracked files
+
+用git add learngit.txt license.txt 将两个文件都提交到 暂存区，再看看状态
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git add learngit.txt license.txt
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   learngit.txt
+        new file:   license.txt
+
+看到一个词 unstage，这句告诉我们当前learngit.txt 及 license.txt 处于暂存区（stage）
+
+git commit -m "add learn of workspace and stage"
+
+提交后，再看看 status是什么情况
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git commit -m "add learn about workspace and stage"
+[master 7867955] add learn about workspace and stage
+ 2 files changed, 5 insertions(+)
+ create mode 100644 license.txt
+
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+提交变更，stage的内容进入版本库，工作区就干净了。
+
+** git add之后的修改只保留在工作区，没有再次执行 git add 前，这些修改在执行git commit时不会提交到版本库
+
+测试一下：1234
+
 
 
 
