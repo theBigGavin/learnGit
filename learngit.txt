@@ -93,6 +93,28 @@ da0313a560b94c788109ace064c19044d6baf6c2 wrote a learngit note
 版本回退使用 git reset 命令
 git reset --hard HEAD^
 
+测试一下：
+$ git commit -m "add how to see git log and how to go back to old version"
+[master f746122] add how to see git log and how to go back to old version
+ 1 file changed, 72 insertions(+)
+记住这个 f746122 ，一会儿回来还要用
+
+$ git reset --hard HEAD^
+HEAD is now at 710675b add how to upload changes
+这就回到了上次提交的版本 710675b4c5f1fd219124a014b671cf1f14d191af add how to upload changes
+
+$ git reset --hard HEAD^^
+HEAD is now at 57fa415 add and commit operation
+这次直接回跳两个版本到了 57fa415fc0be00b9f2ce65fe6c53ddd7644e4eb1 add and commit operation
+
+穿越结束，可以回到现实了
+$ git reset --hard f746122
+HEAD is now at f746122 add how to see git log and how to go back to old version
+好了，找回了刚才敲得一堆文字了吧
+
+
+
+
 
 
 
