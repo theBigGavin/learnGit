@@ -426,6 +426,57 @@ Switched to branch 'dev'
 
 * 合并分支 git merge dev
 
+** 删除分支
+git branch -d dev
+
+$ git branch -d dev
+Deleted branch dev (was 721227a).
+
+这时再查看git branch
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git branch
+  dev2
+* master
+
+dev分支确实消失了
+
+** 解决冲突
+$ git log --graph --pretty=oneline --abbrev-commit
+* db0fcea merge master and dev, handle fix conflicts, remove ...
+*   63ca43b merge master and dev, handle fix conflicts
+|\
+| * 721227a test switch to master
+| * 9fcfde9 test commit on dev branch
+* | 17458d9 before merge dev to master
+|/
+* 50c91d0 add GitHub to Local Repository
+* f53a393 finish of delete file from Repository
+* 9e50a35 real delete file from Repository
+* 59deb57 about delet file from Repository
+* d2f13da test finish of log and reflog
+* eafc643 review of learn git
+* 2b0692e test
+* 88b90ca this commit save all changes to Repository
+* c3844b0 this commit only add ^5678
+* a2b2634 test of modify after git add
+* 7867955 add learn about workspace and stage
+* ce4a4b7 add how to find commit id by git reflog command
+* 764b194 add test of go back and go current
+* f746122 add how to see git log and how to go back to old version
+* 710675b add how to upload changes
+* 29d38aa change to UTF-8
+
+手动解决冲突时，Git会在文件中加上不同分支之间的冲突点<<<<< HEAD ,
+=========, >>>>>> dev
+，手动编辑时 这些注释信息都要删除
+
+** 分支管理策略
+git checkout dev2
+切换到dev2 
+
+现在在dev2 上我增加了这句话，用fast forward模式merge
+
+
 
 
 
