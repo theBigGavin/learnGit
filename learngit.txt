@@ -1,1 +1,14 @@
-v0.1
+v0.1.2
+
+git add learngit.txt
+
+git commit -m "wrote a learngit note"
+-m 后面输入本次提交的说明，任意文字，但当然是希望是对描述修改的有意义的文字
+
+[master (root-commit) da0313a] wrote a learngit note
+ 1 file changed, 1 insertion(+)
+ create mode 100644 learngit.txt
+执行后git 告诉我们 1个文件被变更，插入了1行内容。
+
+Git is a distributed version control system.
+Git is free software.
