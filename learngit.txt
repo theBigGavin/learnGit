@@ -19,7 +19,10 @@
 提交变更和增加文件的操作一样，都是git add然后跟git commit
 
 ** 检查变更
-可以用git diff命令查看 当前工作区文件和版本库文件的差异
+可以用git diff命令查看 当前工作区文件和暂存区或版本库文件的差异 。
+在执行git add 前，显示的是工作区文件和版本区之间的差异。
+在执行git add 后，显示的是工作区文件和暂存区之间的差异。
+再次执行 git add后，由于暂存区和工作区一致了，git diff也就不会显示差异了。
 git diff learngit.txt
 用来查看文件的版本间差异，默认是查看当前文件和库文件之间的区别
 diff --git a/learngit.txt b/learngit.txt
