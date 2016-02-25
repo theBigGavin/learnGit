@@ -12,3 +12,15 @@ git commit -m "wrote a learngit note"
 
 Git is a distributed version control system.
 Git is free software.
+
+git diff learngit.txt
+用来查看文件的版本间差异，默认是查看当前文件和库文件之间的区别
+
+git status
+用来查看库的状态，如果有变化则有显示，无变化则无回显
+
+
+
+
+
+
