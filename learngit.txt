@@ -403,7 +403,6 @@ Checking connectivity... done.
 $ git checkout -b dev
 M       learngit.txt
 Switched to a new branch 'dev'
->>>>>>> dev
 
 * git checkout -b 相当于以下两个命令的组合
 git branch dev
@@ -423,12 +422,10 @@ Switched to branch 'dev'
 
 然后切换到master分支，
 
-<<<<<<< HEAD
 * 在master 分支上，我们现在是看不到dev分支上增加的信息的。
 
 * 合并分支 git merge dev
 
-=======
 
 
 
