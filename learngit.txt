@@ -17,6 +17,12 @@
 
 ** 将变更提交到版本库
 提交变更和增加文件的操作一样，都是git add然后跟git commit
+提交修改文件跟增加新文件的操作一样
+1. git add learngit.txt
+2. git commit -m "add how to upload changes"
+
+[master 710675b] add how to upload changes
+ 1 file changed, 12 insertions(+)
 
 ** 检查变更
 可以用git diff命令查看 当前工作区文件和暂存区或版本库文件的差异 。
@@ -46,7 +52,7 @@ index 5f04ebf..bc1b225 100644
 +
 +
 
-
+** 查看当前变更状态的命令
 git status
 用来查看库的状态，如果有变化则有显示，无变化则无回显
 On branch master
@@ -58,14 +64,9 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
-提交修改文件跟增加新文件的操作一样
-1. git add learngit.txt
-2. git commit -m "add how to upload changes"
 
-[master 710675b] add how to upload changes
- 1 file changed, 12 insertions(+)
-
-可以通过 git log 查看提交记录
+** 查看过往的变更记录
+* 可以通过 git log 查看提交记录
 commit 710675b4c5f1fd219124a014b671cf1f14d191af
 Author: bigGavin <guowei_man@126.com>
 Date:   Thu Feb 25 20:39:59 2016 +0800
@@ -90,7 +91,7 @@ Date:   Thu Feb 25 20:23:47 2016 +0800
 
     wrote a learngit note
 
-git log --pretty=oneline
+* git log --pretty=oneline
 可以将每次版本变更显示为一行概要信息
 710675b4c5f1fd219124a014b671cf1f14d191af add how to upload changes
 29d38aacfdd609841a323cb297212b46eda153dc change to UTF-8
@@ -100,6 +101,7 @@ da0313a560b94c788109ace064c19044d6baf6c2 wrote a learngit note
 如上，注意log的显示是倒叙的，最后的更改在最上面
 710675b4c5f1fd219124a014b671cf1f14d191af是commit id（版本号）
 
+** 版本回退
 版本回退使用 git reset 命令
 git reset --hard HEAD^
 
@@ -122,6 +124,7 @@ $ git reset --hard f746122
 HEAD is now at f746122 add how to see git log and how to go back to old version
 好了，找回了刚才敲得一堆文字了吧
 
+** 查看过往的所有历史日志的命令
 如果已经回退了，且关闭了命令行，还想回到当前版本怎么办？ 用git reflog命令
 $ git reflog
 764b194 HEAD@{0}: commit: add test of go back and go current
@@ -136,6 +139,11 @@ da0313a HEAD@{8}: commit (initial): wrote a learngit note
 这里记录了所有commit操作，只要输入commit命令行开头的数字串，就可返回对应的版本点
 例如:
 git reset --hard 764b194 
+
+* git log 和 git reflog的差别
+当你用 git reset --hard commit_id 返回到之前的某个版本后
+git log 只能查看那个版本及之前的变更记录，之后的变更都看不到了
+git reflog 则可以查看所有变更记录，包括reset操作。
 
 **工作区，暂存区的概念
 当前的superant目录就是 工作区
@@ -324,6 +332,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 3. 执行了git add 后，还执行了git commit,还想撤销修改？
 简单，利用前面的版本回退功能啦： git reset --hard HEAD
+
+
 
 
 
