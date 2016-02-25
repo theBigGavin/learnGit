@@ -389,12 +389,35 @@ Branch master set up to track remote branch master from origin.
 由于远程库是空的，第一推送master分支时，通过-u参数 将本地的master分支内容推送到远程的新master分支，
 还会把本地的master分支和远程的master分支关联起来，以后的推送或者拉取时就可以简化命令
 
+** 从远程库克隆到本地库
+$ git clone git@github.com:theBigGavin/cloneme.git
+Cloning into 'cloneme'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+Checking connectivity... done.
 
+** 分支
+通过下面的操作创建一个dev分支
+$ git checkout -b dev
+M       learngit.txt
+Switched to a new branch 'dev'
 
+* git checkout -b 相当于以下两个命令的组合
+git branch dev
+git checkout dev
 
+* 查看分支,当前的分支前会加一个*
+$ git branch
+* dev
+  master
 
+* 在分支间切换
+$ git checkout dev
+M       learngit.txt
+Switched to branch 'dev'
 
-
+当前在dev分支，我们提交变化
 
 
 
