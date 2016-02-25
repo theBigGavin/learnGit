@@ -187,7 +187,8 @@ nothing to commit, working directory clean
 
 ** git add之后的修改只保留在工作区，没有再次执行 git add 前，这些修改在执行git commit时不会提交到版本库
 
-测试一下：1234
+测试一下：1234^5678
+这次执行git add前，我只添加了 ^5678.在git add执行之后，我再来添加 ^9012
 
 
 
