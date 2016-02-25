@@ -419,7 +419,7 @@ Switched to branch 'dev'
 
 当前在dev分支，我们提交变化
 
-
+然后切换到master分支，
 
 
 
