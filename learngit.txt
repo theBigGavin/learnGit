@@ -494,6 +494,26 @@ Fast-forward (no commit created; -m option ignored)
 
 在dev2 随便加点东西，关键使用--no-ff 来merge
 
+好测试结果
+$ git log --graph --pretty=oneline --abbrev-commit
+*   54ac752 2. --no-ff effect
+|\
+| * 40189fe 2 test for --no-ff
+|/
+* 965f672 0 this time test --no-ff merge
+* 2ab295a 1. use fast forward mode merge
+
+* 分支管理策略
+有一个 master分支，同时有一个dev分支，
+dev分支上再由开发人员自己随时建立临时的个人分支
+个人分支不断和dev分支进行合并，保证开发进度，
+dev分支稳定后才合入master分支，个人分支不直接合入master分支
+
+
+** 现场快照
+正在改代码，又要紧急修改bug，如何保存现场，然后创建bug分支修复bug后再继续工作？
+
+git stash 粉末登场
 
 
 
