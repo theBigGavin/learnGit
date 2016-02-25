@@ -492,7 +492,7 @@ Fast-forward (no commit created; -m option ignored)
 现在再切换到dev2 
 禁用fast forward模式merge
 
-
+在dev2 随便加点东西，关键使用--no-ff 来merge
 
 
 
