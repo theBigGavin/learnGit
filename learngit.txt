@@ -187,10 +187,83 @@ nothing to commit, working directory clean
 
 ** git add之后的修改只保留在工作区，没有再次执行 git add 前，这些修改在执行git commit时不会提交到版本库
 
-测试一下：1234^5678
+测试一下：1234^5678^9012
 这次执行git add前，我只添加了 ^5678.在git add执行之后，我再来添加 ^9012
 
+我增加了^9012后，用git status查看发现
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
 
+        modified:   learngit.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   learngit.txt
+
+learngit.txt有两个状态记录：
+1. Changes to be committed
+2. Changes not staged for commit
+说明 当前工作区中有没有提交到 暂存区的变更，也就是我们新增的^9012
+
+这时候执行 git commit 只会提交^5678，可以测试一下
+Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
+$ git commit -m "this commit only add ^5678"
+[master c3844b0] this commit only add ^5678
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+比较一下工作区和版本库之间的差异
+
+-----------------------------------------------------
+$ git diff learngit.txt
+diff --git a/learngit.txt b/learngit.txt
+index 393e14b..86fa509 100644
+--- a/learngit.txt
++++ b/learngit.txt
+@@ -187,9 +187,36 @@ nothing to commit, working directory clean
+
+ ** git add之后的修改只保留在工作区，没有再次执行 git add 前，这些修改在执行git commit时不会提交到版本库
+
+-测试一下：1234^5678
++测试一下：1234^5678^9012
+ 这次执行git add前，我只添加了 ^5678.在git add执行之后，我再来添加 ^9012
+
++我增加了^9012后，用git status查看发现
++Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
++$ git status
++On branch master
++Changes to be committed:
++  (use "git reset HEAD <file>..." to unstage)
++
++        modified:   learngit.txt
++
++Changes not staged for commit:
++  (use "git add <file>..." to update what will be committed)
++  (use "git checkout -- <file>..." to discard changes in working directory)
++
++        modified:   learngit.txt
++
++learngit.txt有两个状态记录：
++1. Changes to be committed
++2. Changes not staged for commit
++说明 当前工作区中有没有提交到 暂存区的变更，也就是我们新增的^9012
++
++这时候执行 git commit 只会提交^5678，可以测试一下
++Gavin@WIN-M2A9FMGQ5KJ MINGW64 ~/superant (master)
++$ git commit -m "this commit only add ^5678"
++[master c3844b0] this commit only add ^5678
++ 1 file changed, 2 insertions(+), 1 deletion(-)
++
++比较一下工作区和版本库之间的差异
+
+
+-----------------------------------------------------------------
+
+可见工作区和版本库中相比 ^9012 没有被加入，再次执行git add 和 git commit 才能将后面的变更更新到版本库中
 
 
 
