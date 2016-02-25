@@ -1,14 +1,14 @@
-v0.1.2
+ï»¿v0.1.2
 
 git add learngit.txt
 
 git commit -m "wrote a learngit note"
--m ºóÃæÊäÈë±¾´ÎÌá½»µÄËµÃ÷£¬ÈÎÒâÎÄ×Ö£¬µ«µ±È»ÊÇÏ£ÍûÊÇ¶ÔÃèÊöĞŞ¸ÄµÄÓĞÒâÒåµÄÎÄ×Ö
+-m åé¢è¾“å…¥æœ¬æ¬¡æäº¤çš„è¯´æ˜ï¼Œä»»æ„æ–‡å­—ï¼Œä½†å½“ç„¶æ˜¯å¸Œæœ›æ˜¯å¯¹æè¿°ä¿®æ”¹çš„æœ‰æ„ä¹‰çš„æ–‡å­—
 
 [master (root-commit) da0313a] wrote a learngit note
  1 file changed, 1 insertion(+)
  create mode 100644 learngit.txt
-Ö´ĞĞºógit ¸æËßÎÒÃÇ 1¸öÎÄ¼ş±»±ä¸ü£¬²åÈëÁË1ĞĞÄÚÈİ¡£
+æ‰§è¡Œågit å‘Šè¯‰æˆ‘ä»¬ 1ä¸ªæ–‡ä»¶è¢«å˜æ›´ï¼Œæ’å…¥äº†1è¡Œå†…å®¹ã€‚
 
 Git is a distributed version control system.
 Git is free software.
