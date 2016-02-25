@@ -127,6 +127,10 @@ da0313a HEAD@{8}: commit (initial): wrote a learngit note
 例如:
 git reset --hard 764b194 
 
+**工作区，暂存区的概念
+当前的superant目录就是 工作区
+git add就是将文件提交到 暂存区
+git commit 就是讲文件提交到 当前分支master（由创建Git版本库时自动创建）
 
 
 
