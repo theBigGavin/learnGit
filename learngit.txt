@@ -522,6 +522,18 @@ git stash 粉末登场
 
 我回来了，我回来了，我开发完了。
 
+查看效果
+$ git log --graph --pretty=oneline --abbrev-commit
+*   4b4dbc2 解决冲突，合入dev代码
+|\
+| * e6ae3b3 dev 分支开发完了
+* |   b4bbc83 合并bug 101
+|\ \
+| |/
+|/|
+| * db9b609 fixed bug 101
+|/
+* 5ffeac3 save main before stash
 
 
 
