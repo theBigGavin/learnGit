@@ -366,6 +366,34 @@ $ git commit -m "real delete file from Repository"
  1 file changed, 0 insertions(+), 0 deletions(-)
  delete mode 100644 deletme.txt
 
+** 与GitHub配合实现远程版本库
+在superant目录下执行 git remote add origin git@github.com:theBigGavin/learnGit.git
+执行上面的命令在GitHub上为superant项目创建一个名为origin的远程库 
+origin 是远程库的名字
+theBigGavin 是你的GitHub账号名
+
+执行 git push -u origin master 实现将本地库的所有内容推送到远程库中
+The authenticity of host 'github.com (192.30.252.131)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.252.131' (RSA) to the list of known hosts.
+Counting objects: 50, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (40/40), done.
+Writing objects: 100% (50/50), 8.12 KiB | 0 bytes/s, done.
+Total 50 (delta 12), reused 0 (delta 0)
+To git@github.com:theBigGavin/learnGit.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+由于远程库是空的，第一推送master分支时，通过-u参数 将本地的master分支内容推送到远程的新master分支，
+还会把本地的master分支和远程的master分支关联起来，以后的推送或者拉取时就可以简化命令
+
+
+
+
+
+
 
 
 
